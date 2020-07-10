@@ -1,0 +1,102 @@
+<odoo>
+    <!--Main menu-->
+
+    <menuitem id="college_main" name="College" sequence="1"/>
+
+    <!--College Submenu of Main menu-->
+
+    <menuitem id="student_main_sub_menu" name="Student" parent="college_main"/>
+    <!--tree view-->
+    <record id="student_details_tree" model="ir.ui.view">
+        <field name="name">student.details.tree</field>
+        <field name="model">student.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="f_name"/>
+                <field name="dob"/>
+                <field name="age"/>
+                <!--                <field name="dep_id"/>-->
+
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="student_details_form" model="ir.ui.view">
+        <field name="name">student.details.form</field>
+        <field name="model">student.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Personal Information">
+                        <group >
+                            <!--                            <field name="name"/>?-->
+                            <field name="f_name" />
+                            <field name="l_name" required="1"/>
+                            <field name="dob"/>
+                            <field name="age"/>
+                            <!--                            <field name="dep_id"/>-->
+
+
+                            <field name="gender" widget="radio"/>
+<!--                                                        <field name="is_minor"/>-->
+                        </group>
+                        <group>
+                            <field name="roll_number"/>
+                            <field name="entry_fee"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+
+                        <page name="other_ifo" string="Other Information">
+                            <group>
+                                <group>
+                                    <field name="father_name"/>
+                                    <field name="mother_name"/>
+
+                                </group>
+                                <group>
+                                    <field name="address"/>
+                                    <field name="no_sibling"/>
+
+                                </group>
+                            </group>
+                        </page>
+                        <page name="Public2" string="Details">
+                            <group>
+                                <group>
+                                    <field name="gender"  string="Gender"/>
+                                    <field name="entry_fee" string="Entry Fees"/>
+                                    <!--                                <field name="dept" string="Department"/>-->
+                                </group>
+                            </group>
+                        </page>
+
+                    </notebook>
+
+
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Action Window-->
+
+    <record id="student_details_action" model="ir.actions.act_window">
+        <field name="name">Student Details</field>
+        <field name="res_model">student.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_non_content_create">
+                Please enter Student details!</p>
+        </field>
+    </record>
+
+    <menuitem id="student_details" name="Student Details" action="student_details_action" parent="student_main_sub_menu"/>
+
+
+
+</odoo>

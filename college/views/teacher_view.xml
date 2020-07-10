@@ -1,0 +1,55 @@
+<odoo>
+    <!--Main menu-->
+
+<menuitem id="college_main" name="College" sequence="1"/>
+
+    <!--College Submenu of Main menu-->
+
+    <menuitem id="teacher_main_sub_menu" name="Teacher" parent="college.college_main"/>
+    <!--tree view-->
+    <record id="teacher_details_tree" model="ir.ui.view">
+        <field name="name">teacher.details.tree</field>
+        <field name="model">teacher.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+
+                <field name="salary"/>
+            </tree>
+        </field>
+    </record>
+    <record id="teacher_details_form" model="ir.ui.view">
+        <field name="name">teacher.details.form</field>
+        <field name="model">teacher.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+<!--                            <field name="student"/>-->
+                            <field name="salary"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Action Window-->
+
+    <record id="teacher_details_action" model="ir.actions.act_window">
+        <field name="name">Teacher Details</field>
+        <field name="res_model">teacher.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_non_content_create">
+                Please enter Teacher details!</p>
+        </field>
+    </record>
+
+    <menuitem id="teacher_details" name="Teacher Details" action="teacher_details_action" parent="teacher_main_sub_menu"/>
+
+
+
+</odoo>

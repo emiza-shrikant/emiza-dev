@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+
+        <record id="bonus_product" model="product.template">
+            <field name="name">Bonus</field>
+            <field name="type">service</field>
+            <field name="list_price">0</field>
+        </record>
+
+    </data>
+</odoo>

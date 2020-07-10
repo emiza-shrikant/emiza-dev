@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_details,access.student.details,college.model_student_details,base.group_user,1,1,1,1
+access_teacher_details,access.teacher.details,college.model_teacher_details,base.group_user,1,1,1,1
+access_department_details,access.department.details,college.model_department_details,base.group_user,1,1,1,1
+access_department_details_line,access.department.details.line,college.model_department_details_line,base.group_user,1,1,1,1
+access_book_details,access.book.details,college.model_book_details,base.group_user,1,1,1,1

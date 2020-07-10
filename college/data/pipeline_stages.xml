@@ -1,0 +1,33 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="stage_analyse_client" model="crm.stage">
+            <field name="name">Analyse Client</field>
+        </record>
+
+        <record id="stage_proposal" model="crm.stage">
+            <field name="name">Make Proposition</field>
+        </record>
+
+        <record id="stage_waiting" model="crm.stage">
+            <field name="name">Waiting Response from Client</field>
+        </record>
+
+        <record id="stage_on_hold" model="crm.stage">
+            <field name="name">On Hold by Client</field>
+        </record>
+
+        <record id="stage_make_appointment_demo" model="crm.stage">
+            <field name="name">Make Appointment for Demo</field>
+        </record>
+
+        <record id="stage_order_goods" model="crm.stage">
+            <field name="name">Order Goods</field>
+        </record>
+
+        <record id="stage_do_demo" model="crm.stage">
+            <field name="name">Do Demo/ Installation</field>
+        </record>
+
+    </data>
+</odoo>

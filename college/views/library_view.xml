@@ -1,0 +1,56 @@
+<odoo>
+    <!--Main menu-->
+
+    <menuitem id="college_main" name="College" sequence="1"/>
+
+    <!--College Submenu of Main menu-->
+
+    <menuitem id="library_main_sub_menu" name="Library" parent="college_main"/>
+    <!--tree view-->
+    <record id="library_details_tree" model="ir.ui.view">
+        <field name="name">library.details.tree</field>
+        <field name="model">library.details</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="book"/>
+                <field name="book_date"/>
+                <field name="student_details"/>
+                </tree>
+        </field>
+    </record>
+    <record id="library_details_form" model="ir.ui.view">
+        <field name="name">library.details.form</field>
+        <field name="model">library.details</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="book"/>
+                            <field name="book_date"/>
+                            <field name="student_details"/>
+                           </group>
+                            <field name="book_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Action Window-->
+
+    <record id="library_details_action" model="ir.actions.act_window">
+        <field name="name">Library Details</field>
+        <field name="res_model">library.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_non_content_create">
+                Please enter Library details!</p>
+        </field>
+    </record>
+
+    <menuitem id="library_details" name="Library Details" action="library_details_action" parent="library_main_sub_menu"/>
+
+
+
+</odoo>
